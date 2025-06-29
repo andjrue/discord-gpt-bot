@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	fmt.Println("Bot starting...")
 
 	err := godotenv.Load()

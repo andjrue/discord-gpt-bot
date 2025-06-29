@@ -26,14 +26,16 @@ func NewChatClient(apiKey, model shared.ChatModel) *ChatClient {
 }
 
 // update model here, not sure what the type is
-func (client *ChatClient) SendRequestToOai(userMessage string) (string, error) {
+func (client *ChatClient) SendRequestToOai(userMessage, systemPrompt string) (string, error) {
 
 	ctx := context.Background()
 
 	params := openai.ChatCompletionNewParams{
 		Messages: []openai.ChatCompletionMessageParamUnion{
+			openai.SystemMessage(systemPrompt),
 			openai.UserMessage(userMessage),
 		},
+
 		Seed:  openai.Int(0),
 		Model: client.model,
 	}
