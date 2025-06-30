@@ -1,8 +1,8 @@
 # discord-gpt-bot
 
-### Commands
+## Commands
 
-##### !ai
+#### !ai
 
 As of now, this is the only command. You can use this to interact with the AI bot through a message. Your message should follow OpenAI guidelines. Please do not get me banned from
 their services doing anything dumb.
@@ -15,7 +15,7 @@ their services doing anything dumb.
 
 ```I'm here and ready to assist you. What do you need?```
 
-### Personality
+## Personality
 
 The bots personality is pretty simple. I am open to suggestions of how we could improve it.
 
