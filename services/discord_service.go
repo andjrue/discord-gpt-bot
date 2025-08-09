@@ -74,7 +74,14 @@ func (ds *DiscordService) handleMessage(s *discordgo.Session, m *discordgo.Messa
 		Timestamp: m.Timestamp,
 		ChannelId: m.ChannelID,
 	}
-	ds.contextStore[m.ChannelID] = append(ds.contextStore[m.ChannelID], record)
+
+	history := ds.contextStore[m.ChannelID]
+
+	if len(history) >= 20 {
+		history = history[1:]
+	}
+
+	ds.contextStore[m.ChannelID] = append(history, record)
 
 	if !strings.HasPrefix(input, "!ai") {
 		return
